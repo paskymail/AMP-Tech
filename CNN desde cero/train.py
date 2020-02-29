@@ -11,8 +11,8 @@ K.clear_session()
 
 
 
-data_entrenamiento = './data/entrenamiento'
-data_validacion = './data/validacion'
+data_entrenamiento = r"./data/entrenamiento"
+data_validacion = r"./data/validacion"
 
 """
 Parameters
@@ -41,14 +41,10 @@ entrenamiento_datagen = ImageDataGenerator(
 
 test_datagen = ImageDataGenerator(rescale=1. / 255)
 
-entrenamiento_generador = entrenamiento_datagen.flow_from_directory(
-    data_entrenamiento,
-    target_size=(altura, longitud),
-    batch_size=batch_size,
-    class_mode='categorical')
+entrenamiento_generador = entrenamiento_datagen.flow_from_directory(r"C:\Users\pasky\Documents\Master_en_Matematicas\PFM\Neuronal_Networks\Reference_code\AMP-Tech\CNN desde cero\data\entrenamiento", target_size=(altura, longitud), batch_size=batch_size, class_mode='categorical')
 
 validacion_generador = test_datagen.flow_from_directory(
-    data_validacion,
+    r"C:\Users\pasky\Documents\Master_en_Matematicas\PFM\Neuronal_Networks\Reference_code\AMP-Tech\CNN desde cero\data\validacion",
     target_size=(altura, longitud),
     batch_size=batch_size,
     class_mode='categorical')
